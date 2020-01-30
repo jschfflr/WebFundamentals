@@ -77,7 +77,8 @@ See [Fields](/web/tools/chrome-devtools/storage/cookies#fields) for an explanati
 ### Copy as Node.js fetch to include cookie data {: #fetchcookies }
 
 Right-click a network request and select **Copy** > **Copy as Node.js fetch** to get a
-`fetch` expression that includes cookie data.
+`fetch` expression that includes cookie data as a header instead of setting credentials: include.
+The cookies will be ignored when using this format in the browser because the [fetch specs](https://fetch.spec.whatwg.org/#forbidden-header-name) lists the Cookie header as forbidden.
 
 ![Copy as Node.js fetch](/web/updates/images/2020/01/fetchcookies.png)
 
